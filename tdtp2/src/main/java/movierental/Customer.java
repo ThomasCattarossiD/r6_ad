@@ -6,7 +6,7 @@ import java.util.List;
 public class Customer {
 
     private final String _name;
-    private final List<Rental> _rentals = new ArrayList<Rental>();
+    private final List<Rental> _rentals = new ArrayList<>();
 
     public Customer(String name) {
         _name = name;
