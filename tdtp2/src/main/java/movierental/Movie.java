@@ -7,7 +7,7 @@ public class Movie {
     public static final int REGULAR = 0;
 
     private final String _title;
-    private int _priceCode;
+    private final int _priceCode;
 
     public Movie(String title, int priceCode) {
         _title = title;
