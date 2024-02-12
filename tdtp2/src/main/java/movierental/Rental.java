@@ -5,8 +5,8 @@ package movierental;
  */
 public class Rental {
 
-    private Movie _movie;
-    private int _daysRented;
+    private final Movie _movie;
+    private final int _daysRented;
 
     public Rental(Movie movie, int daysRented) {
         _movie = movie;
