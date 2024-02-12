@@ -21,15 +21,27 @@ public class Customer {
     }
 
     public String statement() {
+
+        // Initialisation de totalAmount et frequentRenterPoints
         double totalAmount = 0;
         int frequentRenterPoints = 0;
+
+        // Initialisation du StringBuilder pour permettre de retourner notre résultat souhaité
         StringBuilder result = new StringBuilder("Rental Record for " + getName() + "\n");
+
+        // Boucle itérative sur chaque film loué
         for (Rental each : _rentals) {
+
+            // Calcul du montant et des frequentRenterPoints
             double thisAmount = determineAmountForEachLine(each);
             frequentRenterPoints += calculateFrequentRenterPoints(each);
+
+            // Résultat de chaque film
             result.append("\t").append(each.getMovie().getTitle()).append("\t").append(thisAmount).append("\n");
             totalAmount += thisAmount;
         }
+
+        // Résultat total
         result.append("Amount owed is ").append(totalAmount).append("\n");
         result.append("You earned ").append(frequentRenterPoints).append(" frequent renter points");
         return result.toString();
@@ -38,6 +50,7 @@ public class Customer {
     // Méthode pour calculer le montant pour chaque ligne de location
     private double determineAmountForEachLine(Rental rental) {
         double thisAmount = 0;
+        // Switch pour la détermination du montant de chaque film
         switch (rental.getMovie().getPriceCode()) {
             case Movie.REGULAR:
                 thisAmount += 2;
