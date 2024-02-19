@@ -1,6 +1,7 @@
 public class Conducteur {
     private String nom;
     private int age;
+    private final static int MAJORITE = 10;
 
     public Conducteur(String name, int years) {
         this.nom = name;
@@ -8,7 +9,7 @@ public class Conducteur {
     }
 
     public boolean estAdulte() {
-        return age >= 10;
+        return age >= MAJORITE;
     }
 
     public void demarrerVoiture(Voiture voiture) {
@@ -19,7 +20,7 @@ public class Conducteur {
         }
     }
 
-    public void arreterVoiture(Voiture voiture) {
+    public void arreterVoiture() {
         System.out.println(nom + " arrête la voiture.");
     }
 

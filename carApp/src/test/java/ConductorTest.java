@@ -26,7 +26,7 @@ public class ConducteurTest {
     @Test
     public void testArreterVoiture() {
         Voiture voiture = new Voiture("Sedan", "Bleu");
-        conducteur.arreterVoiture(voiture);
+        conducteur.arreterVoiture();
         // How to assert that the arreterVoiture method was called?
     }
 
